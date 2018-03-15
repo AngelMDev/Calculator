@@ -6,4 +6,30 @@ describe Calculator do
             expect(Calculator.add(7,7)).to eq 14
         end
     end
+
+    describe "::sub" do
+        it "should return 0 to the 7-7 substraction"
+            expect(Calculator.sub(7,7)).to eq 0
+        end
+
+        it "should return a negative number"
+            expect(Calculator.sub(7-10)).to eq 3
+        end
+    end
+
+    describe "::mult" do
+        it "should return the result of a multiplication" do
+            expect(Calculator.mult(2,2)).to eq 4
+        end
+    end
+
+    describe "::div" do
+        it "should return the result of a division" do
+            expect(Calculator.div(5,5)).to eq 1
+        end
+
+        it "should return the string 'Division by 0 Error'" do
+            expect(Calculator.div(5,0)).to output("Division by 0 Error").to_stdout
+        end
+    end
 end
